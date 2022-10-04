@@ -1,0 +1,26 @@
+* {
+    box-sizing:border-box;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(54, 54, 100);
+    color:rgb(242, 242, 242);
+    padding: 2em;
+}
+
+.container {
+    display: flex;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
