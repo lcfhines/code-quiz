@@ -4,11 +4,14 @@ var timeLeftEl = document.getElementById("time-left");
 var questionEl = document.getElementById("question-display");
 var ruleEl = document.getElementById("rules");
 var answerListEl = document.getElementById("answer-list");
+var answerChoice1 = document.getElementById("answer-1");
+var answerChoice2 = document.getElementById("answer-2");
+var answerChoice3 = document.getElementById("answer-3");
+var answerChoice4 = document.getElementById("answer-4");
 
 // DATA
 // questions in quiz
-
-var questions = [];
+var question = ["Which of the following lines of code will replace “Susan” in the below array with “Kate”?", "Which of the following is NOT an example of an arithmetic operator?"]
     // answers to each quesiton
 // time when wrong answer
 // score at end of quiz
@@ -26,6 +29,9 @@ function startQuiz(){
     showQuestion();
     // hide rules
     ruleEl.innerHTML="";
+    // hide start button
+// this doesn't get rid of the padding
+    startButton.innerHTML="";
 }
         
     
@@ -53,17 +59,16 @@ function timesUp() {
     questionEl.textContent = "Time's up!"
 }
 
-// need to store questions (and answer options) in array, object
-function showQuestion() {
-    var question = getQuestion();
 
-    questionEl.textContent = "Question 1?"
+function showQuestion() {
+    for (var i = 0; i < question.length; i++)
+    questionEl.textContent = question[i];
 
 }
 
-// ??? 
-function getQuestion() {
-    return "boolean"
+// based on which answer is clicked, check if correct (compare to object?)
+function checkAnswerKey() {
+    
 }
 
 // USER INTERACTIONS
@@ -71,19 +76,20 @@ function getQuestion() {
 startButton.addEventListener("click", startQuiz)
 
 // makes answer selection (clicks on answer)
+answerChoice1.addEventListener("click", checkAnswerKey)
+answerChoice2.addEventListener("click", checkAnswerKey)
+answerChoice3.addEventListener("click", checkAnswerKey)
+answerChoice4.addEventListener("click", checkAnswerKey)
 
 
 
 
-
-
-        // IF time is not 0 and IF there are remaining questions
+    // IF time is not 0 and IF there are remaining questions
             // present next question & corresponding answers
             // if correct: time is unchanged, display correct message
             // if incorrect: time is subtracted, display incorrect message
     // types name
     // clicks button to view high scores
-
 
 
 
