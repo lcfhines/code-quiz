@@ -11,8 +11,19 @@ var answerChoice4 = document.getElementById("answer-4");
 
 // DATA
 // questions in quiz
-var question = ["Which of the following lines of code will replace “Susan” in the below array with “Kate”?", "Which of the following is NOT an example of an arithmetic operator?"]
-    // answers to each quesiton
+var question = ["Which of the following is NOT an example of an arithmetic operator?"]
+
+// answer options for each quesiton
+var answers = {
+    answerone: "console.log (a + b);",
+    answertwo: "console.log (a - b);",
+    answerthree: "console.log (a x b);",
+    answerfour: "console.log (a / b);"
+}
+
+// correct answer for each question
+var correctAnswer = ["console.log (a x b);"]
+
 // time when wrong answer
 // score at end of quiz
 // player names + high scores
@@ -63,11 +74,15 @@ function timesUp() {
 function showQuestion() {
     for (var i = 0; i < question.length; i++)
     questionEl.textContent = question[i];
-
+    answerChoice1.textContent = answers.answerone;
+    answerChoice2.textContent = answers.answertwo;
+    answerChoice3.textContent = answers.answerthree;
+    answerChoice4.textContent = answers.answerfour;
 }
 
 // based on which answer is clicked, check if correct (compare to object?)
-function checkAnswerKey() {
+function checkAnswer() {
+    if 
     
 }
 
@@ -76,10 +91,10 @@ function checkAnswerKey() {
 startButton.addEventListener("click", startQuiz)
 
 // makes answer selection (clicks on answer)
-answerChoice1.addEventListener("click", checkAnswerKey)
-answerChoice2.addEventListener("click", checkAnswerKey)
-answerChoice3.addEventListener("click", checkAnswerKey)
-answerChoice4.addEventListener("click", checkAnswerKey)
+answerChoice1.addEventListener("click", checkAnswer)
+answerChoice2.addEventListener("click", checkAnswer)
+answerChoice3.addEventListener("click", checkAnswer)
+answerChoice4.addEventListener("click", checkAnswer)
 
 
 
