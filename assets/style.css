@@ -2,6 +2,13 @@
     box-sizing:border-box;
 }
 
+body {
+    color:  rgb(54, 54, 100);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -9,7 +16,7 @@ header {
     align-items: center;
     background: rgb(54, 54, 100);
     color:rgb(242, 242, 242);
-    padding: 2em;
+    padding: 1em;
 }
 
 .container {
@@ -24,3 +31,45 @@ main {
     padding: 2em;
 }
 
+button {
+    background-color: lightblue;
+    border: none;
+    border-radius: 8px;
+    color: rgb(54, 54, 100); 
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: rgb(128, 126, 233);
+}
+
+nav {
+    text-align: center;
+}
+
+ul {
+    padding-inline-start: 0px;
+    padding: 10px;
+}
+
+li {
+    background-color: lightblue;
+    border: 1px solid rgb(54, 54, 100);
+    padding:20px;
+    list-style: none;
+    text-align: left;
+    font-size: 18px;
+    color:rgb(54, 54, 100);
+}
+
+li:hover{
+    background-color: rgb(128, 126, 233);
+}
+
+#rules {
+    font-size: 20px;
+}
