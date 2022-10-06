@@ -73,3 +73,8 @@ li:hover{
 #rules {
     font-size: 20px;
 }
+
+#question-results {
+    font-size: 25px;
+    color: green;
+}

@@ -1,5 +1,6 @@
 // DEPENDENCIES
 var startButton = document.getElementById("start");
+var timerEl = document.getElementById("time-indicator");
 var timeLeftEl = document.getElementById("time-left");
 var questionEl = document.getElementById("question-display");
 var ruleEl = document.getElementById("rules");
@@ -8,6 +9,7 @@ var answerChoice1 = document.getElementById("answer-1");
 var answerChoice2 = document.getElementById("answer-2");
 var answerChoice3 = document.getElementById("answer-3");
 var answerChoice4 = document.getElementById("answer-4");
+var questionResults = document.getElementById("question-results");
 
 // DATA
 // questions in quiz
@@ -22,7 +24,7 @@ var answers = {
 }
 
 // correct answer for each question
-var correctAnswer = ["console.log (a x b);"]
+var correctAnswer = ["answer-3"]
 
 // time when wrong answer
 // score at end of quiz
@@ -54,20 +56,25 @@ function startTimer() {
         // deduct time by 1 second
         --timeLeft;
         timeLeftEl.textContent = timeLeft;
+        localStorage.setItem("time left", timeLeft);
         // when time reaches 0, what needs to happen
         if (timeLeft === 0){
             // timer stops
             clearInterval(timerInterval)
+            // timer is removed
+            timerEl.innerHTML=""
             // time is up message
             timesUp();
-
         } 
-        // add in another if statement - if timeLeft > 0, but answer was incorrect, then deduct more
     }, 1000)
 }
 
+
 function timesUp() {
     questionEl.textContent = "Time's up!"
+    timerEl.innerHTML=""
+// need to replace quiz sections with 1) score 2) form for submitting
+    // 
 }
 
 
@@ -80,27 +87,32 @@ function showQuestion() {
     answerChoice4.textContent = answers.answerfour;
 }
 
-// based on which answer is clicked, check if correct (compare to object?)
-// function checkAnswer() {    
-// }
+// create variable for clicked answer
+answerListEl.addEventListener("click", function(event) {
+    event.preventDefault();
+    var selectedAnswer = event.target.id;
+    console.log(selectedAnswer);
+    localStorage.setItem("selected answer", selectedAnswer);
+    
+// if answer is correct, display correct message; if incorrect, display incorrect message and deduct 10 second from time
+
+    if (selectedAnswer === correctAnswer[0]) {
+        console.log("YAY");
+        questionResults.textContent = "Correct!"
+    // go to next question
+    } else {
+        questionResults.textContent = "Incorrect"
+    // DEDUCT 10 SECONDS IF QUESTION IS WRONG
+    // go to next question
+    }
+});
+
+
 
 // USER INTERACTIONS
 // clicks button to start 
 startButton.addEventListener("click", startQuiz)
 
-// makes answer selection (clicks on answer)
-answerChoice1.addEventListener("click", checkAnswer)
-answerChoice2.addEventListener("click", checkAnswer)
-answerChoice3.addEventListener("click", checkAnswer)
-answerChoice4.addEventListener("click", checkAnswer)
-
-
-
-
-    // IF time is not 0 and IF there are remaining questions
-            // present next question & corresponding answers
-            // if correct: time is unchanged, display correct message
-            // if incorrect: time is subtracted, display incorrect message
     // types name
     // clicks button to view high scores
 
