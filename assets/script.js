@@ -81,10 +81,8 @@ function showQuestion() {
 }
 
 // based on which answer is clicked, check if correct (compare to object?)
-function checkAnswer() {
-    if 
-    
-}
+// function checkAnswer() {    
+// }
 
 // USER INTERACTIONS
 // clicks button to start 
